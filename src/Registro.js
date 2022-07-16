@@ -17,6 +17,7 @@ export default function Registro() {
         <input type="text" placeholder="Surename" />
         <input type="text" placeholder="email" />
         <input type="password" placeholder="password" />
+        <h6>Más de 6 caracteres!!!</h6>
         <button disabled={but}>Registrar</button>
       </form>
     </div>
