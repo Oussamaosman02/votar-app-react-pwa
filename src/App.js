@@ -1,18 +1,12 @@
-import React, { useEffect } from "react";
-import { app } from "./firebase";
-import Home from "./Home";
-import Logueo from "./Logueo";
+import './App.css';
+import React from 'react';
 
 function App() {
-  const [usuario, setUsuario] = React.useState(null);
-  useEffect(() => {
-    app.auth().onAuthStateChanged((usuarioFirebase) => {
-      console.log("ya tienes sesión iniciada con:", usuarioFirebase);
-      setUsuario(usuarioFirebase);
-    });
-  }, []);
-
-  return <>{usuario ? <Home /> : <Logueo setUsuario={setUsuario} />}</>;
+  return (
+    <div className="App">
+      
+    </div>
+  );
 }
 
 export default App;
