@@ -4,8 +4,8 @@
   "icons": [
     {
       "src": "logov.png",
-      "type": "image/jpg",
-      "sizes": "192x192"
+      "type": "image/png",
+      "sizes": "192x192 1024x1024"
     },
     {
       "src": "logoa.png",
