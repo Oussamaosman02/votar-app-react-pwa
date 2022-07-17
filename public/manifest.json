@@ -8,8 +8,8 @@
       "sizes": "192x192"
     },
     {
-      "src": "logoa.jpg",
-      "type": "image/jpg",
+      "src": "logoa.png",
+      "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"
     }
