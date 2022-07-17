@@ -5,13 +5,13 @@
     {
       "src": "logov.png",
       "type": "image/png",
-      "sizes": "192x192 1024x1024"
+      "sizes": "192x192 512x512 1024x1024",
+      "purpose": "any maskable"
     },
     {
       "src": "logoa.png",
       "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any maskable"
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
