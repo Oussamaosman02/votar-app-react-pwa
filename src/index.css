@@ -5,9 +5,34 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(
+    180deg,
+    rgba(249, 173, 102, 0.5),
+    rgba(58, 62, 89, 0.5)
+  );
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.imagenses {
+  position: relative;
+  z-index: 100;
+  background-color: transparent;
+}
+.imagenses img {
+  width: 30%;
+  position: relative;
+}
+.imagenses .vlogo{
+  left: 10%;
+}
+.imagenses .ologo {
+  left: -5%;
+}
+.imagenses .ulogo {
+  left: -5%;
 }

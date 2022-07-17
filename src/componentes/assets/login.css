@@ -1,0 +1,49 @@
+.login {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    180deg,
+    rgba(249, 173, 102, 0.5),
+    rgba(58, 62, 89, 0.5)
+  );
+}
+.login div {
+  position: relative;
+  top: -5vh;
+}
+.login h2 {
+  color: whitesmoke;
+}
+.login form {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.login input {
+  margin-bottom: 3vh;
+  position: relative;
+  border-radius: 25px;
+  border-style: none;
+  text-align: center;
+}
+.login input::placeholder {
+  text-align: center;
+}
+.login p {
+  position: relative;
+  text-align: left;
+}
+.login button {
+  border-style: none;
+  padding: 3px;
+}
+.login a {
+  margin: 3vh;
+}
