@@ -32,7 +32,7 @@ export function registrarUsuario(email, password) {
 const auth = getAuth();
 export async function inicioSesionUsuario(email, password) {
   try {
-    let credenciales = await signInWithEmailAndPassword(auth, email, password);
+    await signInWithEmailAndPassword(auth, email, password);
   } catch (e) {
     return false;
   }

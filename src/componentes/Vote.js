@@ -4,18 +4,17 @@ import { buscar, votar } from "../firebase";
 
 export function Vote() {
   const [clientes, setClientes] = useState([]);
-  const [mas, setMas] = useState(false);
   let nombreCol = "clientes";
  
 
 
-  const buscarCli = async (cole) => {
-    let clientes = await buscar(cole);
+  const buscarCli = async () => {
+    let clientes = await buscar(nombreCol);
     setClientes(clientes);
   };
   
   useEffect(() => {
-    buscarCli(nombreCol);
+    buscarCli();
   }, []);
 
   return (
@@ -31,7 +30,7 @@ export function Vote() {
               let id = c.id;
               let vot = c.votes +1;
               await votar(nombreCol, id, vot);
-              buscarCli(nombreCol)
+              buscarCli()
               let nodo = document.getElementById(c.id);
               let a = document.createAttribute("disabled");
               a.value = "true";
@@ -40,12 +39,12 @@ export function Vote() {
             >
               +
             </button>
-            <button id={`${c.id}1`} disabled={mas} 
+            <button id={`${c.id}1`}
             onClick={ async() =>{
               let id = c.id;
               let vot = c.votes -1;
               await votar(nombreCol, id, vot);
-              buscarCli(nombreCol)
+              buscarCli()
               let nodo = document.getElementById(`${c.id}1`);
               let a = document.createAttribute("disabled");
               a.value = "true";
