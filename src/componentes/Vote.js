@@ -3,6 +3,8 @@ import { buscar, votar } from "../firebase";
 import "./assets/home.css";
 import vlogo from "./assets/v.png";
 import ulogo from "./assets/u.png";
+import cora from "./assets/cora.png";
+import bcora from "./assets/bcora.png";
 import otelogo from "./assets/ote.png";
 import { useNavigate } from "react-router-dom";
 
@@ -34,7 +36,9 @@ export function Vote() {
               <span className="nam">{c.name}</span>
               <span className="men">{c.message}</span>
               <span className="vot">{c.votes}</span>
-              <button
+              <img
+                src={cora}
+                alt="corazon"
                 className="masb"
                 id={c.id}
                 onClick={async () => {
@@ -43,14 +47,15 @@ export function Vote() {
                   await votar(nombreCol, id, vot);
                   buscarCli();
                   let nodo = document.getElementById(c.id);
-                  let a = document.createAttribute("disabled");
-                  a.value = "true";
-                  nodo.setAttributeNode(a);
+                  nodo.style.display = "none";
+
+                  let nodo2 = document.getElementById(`${c.id}1`);
+                  nodo2.style.display = "block";
                 }}
-              >
-                +
-              </button>
-              <button
+              />
+              <img
+                src={bcora}
+                alt="corazon roto"
                 className="menosb"
                 id={`${c.id}1`}
                 onClick={async () => {
@@ -59,13 +64,11 @@ export function Vote() {
                   await votar(nombreCol, id, vot);
                   buscarCli();
                   let nodo = document.getElementById(`${c.id}1`);
-                  let a = document.createAttribute("disabled");
-                  a.value = "true";
-                  nodo.setAttributeNode(a);
+                  nodo.style.display = "none";
+                  let nodo2 = document.getElementById(c.id);
+                  nodo2.style.display = "block";
                 }}
-              >
-                -
-              </button>
+              />
             </li>
           );
         })}

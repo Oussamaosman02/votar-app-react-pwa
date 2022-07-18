@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import "./assets/superhome.css"
 import vlogo from "./assets/v.png";
@@ -6,7 +6,14 @@ import ulogo from "./assets/u.png";
 import otelogo from "./assets/ote.png";
 import { useNavigate } from 'react-router-dom';
 export default function Superhome() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const [loged,setLoged] = useState(false);
+  let clave = "sesion1"
+  let l = localStorage;
+  useEffect(()=>{
+    setLoged(l.getItem(clave))
+  },[])
+
   return (
     <div className='suphome'>
         <div>
@@ -39,7 +46,7 @@ export default function Superhome() {
                 Desde aqui!!
                 <br/>
                 <button onClick={()=>{
-                    navigate("/inicio",{replace:true})
+                    loged ? navigate("/home",{replace:true}) : navigate("/inicio",{replace:true})
                 }}>
                     Entrar
                 </button>

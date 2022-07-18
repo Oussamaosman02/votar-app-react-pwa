@@ -9,6 +9,9 @@ import otelogo from "./assets/ote.png";
 export default function Login() {
   const [but, setBut] = useState(false);
   const navigate = useNavigate();
+let loged = true
+  let l = localStorage;
+  let clave = "sesion1"
   const login = async (e) => {
     e.preventDefault();
     let sesionini = await inicioSesionUsuario(
@@ -18,10 +21,12 @@ export default function Login() {
 
     if (sesionini) {
       setBut(true);
+      l.setItem(clave,loged)
       e.preventDefault();
       navigate("/home", { replace: true });
     } else {
       e.preventDefault();
+      l.setItem(clave,!loged)
       alert("fallo");
     }
     e.preventDefault();
@@ -43,7 +48,7 @@ export default function Login() {
           <p>Email</p>
           <input type="text" placeholder="email" />
           <p>Contraseña</p>
-          <input type="text" placeholder="password" />
+          <input type="password" placeholder="password" />
           <button disabled={but}>Inciar sesion</button>
           <Link to="/registro">¿No tienes cuenta?Dale aquí</Link>
         </form>

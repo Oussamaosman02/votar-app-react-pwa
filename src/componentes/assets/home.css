@@ -17,7 +17,9 @@
 .home li {
   list-style: none;
   text-align: left;
-  background: linear-gradient(180deg, rgb(195, 107, 132), rgb(58, 62, 89));
+  background: linear-gradient(180deg,
+   rgba(195, 107, 132,.5),
+    rgba(58, 62, 89,.5));
   margin: 1vh 3vw;
   display: flex;
   min-width: 150px;
@@ -46,24 +48,20 @@
   color: white;
   font-weight: 900;
 }
-.home li button {
-  width: 25%;
+.home li img {
+  width: 10%;
   align-self: center;
   border-style: none;
-  color: rgb(255,234,234);
-  background-color: rgb(158, 158, 158);
-  border-radius: 25vw;
-  border: 0.5px black dashed;
   position: absolute;
-  font-weight: 800;
+ filter: drop-shadow(0 0 3px rgba(58, 62, 89,.6));
 }
 .home li .menosb {
-  left: 85%;
-  top: -5%;
+  top: 70%;
+  left: 3%;
 }
 .home li .masb {
-  left: 85%;
-  top: 85%;
+  top: 70%;
+  left: 87%;
 }
 
 .creare {
